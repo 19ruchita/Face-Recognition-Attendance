@@ -1,0 +1,16 @@
+# Firebase key
+serviceAccountKey.json
+
+# Python virtual environment
+face-env/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# VS Code settings
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
