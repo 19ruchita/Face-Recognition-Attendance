@@ -1,0 +1,228 @@
+.recognition-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 20px;
+}
+
+.video-recognition-wrapper {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.video-container {
+  position: relative;
+  width: 640px;
+  height: 480px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #000;
+}
+
+.camera-feed {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-text {
+  position: absolute;
+  top: 20%;
+  color: #ff00ff;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+.face-frame {
+  border: 2px solid #00ff00;
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.face-frame::before,
+.face-frame::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #00ff00;
+}
+
+.face-frame::before {
+  top: -2px;
+  left: -2px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.face-frame::after {
+  bottom: -2px;
+  right: -2px;
+  border-left: none;
+  border-top: none;
+}
+
+.recognition-info {
+  flex: 1;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.recognition-result {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+.already-marked {
+  color: #856404;
+  background-color: #fff3cd;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.recognition-button {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.recognition-button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+.recognition-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.status-message {
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #e9ecef;
+  margin-bottom: 15px;
+}
+
+.matched-person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 0;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.matched-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.matched-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 5px 0;
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.loading-text {
+  color: #ff00ff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.student-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+}
+
+.attendance-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.checkmark-circle {
+  width: 60px;
+  height: 60px;
+  background: #4CAF50;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.student-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.student-id, .student-major {
+  background: #f0f0ff;
+  padding: 8px 20px;
+  border-radius: 20px;
+  margin: 5px 0;
+}
+
+.attendance-stats {
+  margin-top: 15px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}

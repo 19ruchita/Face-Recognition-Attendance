@@ -9,8 +9,8 @@ from firebase_admin import  storage
 
 cred = credentials.Certificate("serviceAccountKey.json")
 firebase_admin.initialize_app(cred, {
-    'databaseURL': "https://face-recognition-attenda-f96f2-default-rtdb.firebaseio.com/",
-    'storageBucket': "face-recognition-attenda-f96f2.firebasestorage.app"
+    'databaseURL': "https://face-recognition-attenda-c4408-default-rtdb.firebaseio.com/",
+    'storageBucket': "face-recognition-attenda-c4408.firebasestorage.app"
 })
 
 

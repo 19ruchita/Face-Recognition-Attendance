@@ -1,0 +1,45 @@
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f2f5;
+}
+
+.app-header {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.backend-status {
+  font-size: 0.9rem;
+  color: #4CAF50;
+  margin-top: 10px;
+}
+
+.status-display {
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+}

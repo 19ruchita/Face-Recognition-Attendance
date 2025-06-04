@@ -13,8 +13,8 @@ from datetime import datetime
 
 cred = credentials.Certificate("serviceAccountKey.json")
 firebase_admin.initialize_app(cred, {
-    'databaseURL': "https://face-recognition-attenda-f96f2-default-rtdb.firebaseio.com/",
-    'storageBucket': "face-recognition-attenda-f96f2.firebasestorage.app"
+    'databaseURL': "https://face-recognition-attenda-c4408-default-rtdb.firebaseio.com/",
+    'storageBucket': "face-recognition-attenda-c4408.firebasestorage.app"
 })
 
 bucket = storage.bucket()
@@ -91,9 +91,15 @@ while True:
                 studentInfo = db.reference(f'Students/{id}').get()
                 print(studentInfo)
                 # Get the Image from the storage
+                print(f"Trying to access: Images/{id}.png")
                 blob = bucket.get_blob(f'Images/{id}.png')
-                array = np.frombuffer(blob.download_as_string(), np.uint8)
-                imgStudent = cv2.imdecode(array, cv2.COLOR_BGRA2BGR)
+                print("Blob found?" , blob is not None)
+                if blob:
+                   array = np.frombuffer(blob.download_as_string(), np.uint8)
+                   imgStudent = cv2.imdecode(array, cv2.COLOR_BGRA2BGR)
+                else :
+                    print(f"Image for ID {id} not found in Firebase Storage.")
+                    continue  # or handle the missing image appropriately   
                 # Update data of attendance
                 datetimeObject = datetime.strptime(studentInfo['last_attendance_time'],
                                                    "%Y-%m-%d %H:%M:%S")
@@ -135,7 +141,8 @@ while True:
                     cv2.putText(imgBackground, str(studentInfo['name']), (808 + offset, 445),
                                 cv2.FONT_HERSHEY_COMPLEX, 1, (50, 50, 50), 1)
 
-                    imgBackground[175:175 + 216, 909:909 + 216] = imgStudent
+                    imgStudent_resized = cv2.resize(imgStudent, (216, 216))
+                    imgBackground[175:175 + 216, 909:909 + 216] = imgStudent_resized
 
                 counter += 1
 

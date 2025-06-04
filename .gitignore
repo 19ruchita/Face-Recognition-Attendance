@@ -14,3 +14,44 @@ __pycache__/
 # OS generated files
 .DS_Store
 Thumbs.db
+
+# === General ===
+*.log
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+.DS_Store
+.env
+.env.*
+
+# === Node.js / React (frontend) ===
+frontend/node_modules/
+frontend/build/
+frontend/.env
+
+# === Python / Flask (backend) ===
+backend/venv/
+backend/env/
+backend/__pycache__/
+backend/*.pyc
+backend/*.pyo
+backend/*.pyd
+backend/.env
+backend/instance/
+backend/.pytest_cache/
+backend/.mypy_cache/
+
+# === VS Code / IDE ===
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# === System Files ===
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# === OS X ===
+.DS_Store
